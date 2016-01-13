@@ -20,7 +20,7 @@ sudo cp certs/domain.crt /etc/docker/certs.d/docker-hub.huawei.com\:5000/ca.crt
 # auth
 mkdir -p auth
 htpasswd -cB auth/htpasswd user1
-htpasswd -B auth/htpasswd user2
+#htpasswd -B auth/htpasswd user2
 
 # mkdir
 mkdir -p docker_registry
