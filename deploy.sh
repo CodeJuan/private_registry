@@ -19,6 +19,7 @@ sudo cp certs/domain.crt /etc/docker/certs.d/docker-hub.huawei.com\:5000/ca.crt
 
 # auth
 mkdir -p auth
+# 这里改成通过registry2.2，自己在脚本嵌入密码的方式，减少一次输入
 htpasswd -cB auth/htpasswd user1
 #htpasswd -B auth/htpasswd user2
 
