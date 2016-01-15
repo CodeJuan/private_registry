@@ -1,5 +1,5 @@
 # 用法
-
+先安装docker-compose
 ```sh
 # 在搭建registry的机器上运行deploy.sh，初始化环境
 bash deploy.sh
