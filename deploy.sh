@@ -11,6 +11,7 @@ cd $path
 
 # certs
 mkdir -p certs
+# 第四项CommonName输入你的registry的域名，我这里输入docker-hub.huawei.com。其余选项都敲回车，用默认值即可。
 openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key -x509 -days 365 -out certs/domain.crt
 
 # copy cert to domain
