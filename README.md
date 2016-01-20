@@ -11,6 +11,23 @@ docker-compose up
 bash client.sh
 ```
 
+然后在client上
+```
+docker login docker-hub.huawei.com
+
+用户名user  密码1234
+
+docker push
+
+docker pull
+```
+也可以访问前端查看镜像
+[https://docker-hub.hawei.com/home](https://docker-hub.hawei.com/home)
+用户名user  密码1234
+
+
+
+
 赶时间，用的都是简单粗暴的方法，等走通流程之后再重构
 
 # 架构
