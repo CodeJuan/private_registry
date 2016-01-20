@@ -2,7 +2,7 @@
 curpath=$PWD
 echo "$curpath"
 
-path=/registry
+path=./registry
 
 
 

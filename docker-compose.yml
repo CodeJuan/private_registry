@@ -8,9 +8,9 @@ registry:
     REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
     REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
   volumes:
-    - /registry/docker_registry:/var/lib/registry
-    - /registry/certs:/certs:ro
-    - /registry/auth:/auth:ro
+    - ./registry/docker_registry:/var/lib/registry
+    - ./registry/certs:/certs:ro
+    - ./registry/auth:/auth:ro
   ports:
    - 5000:5000
      
@@ -26,8 +26,24 @@ registry-frontend:
     ENV_DOCKER_REGISTRY_USE_SSL: '1'
     ENV_USE_SSL: 'yes'
   volumes:
-    - /registry/certs/domain.crt:/etc/apache2/server.crt:ro
-    - /registry/certs/domain.key:/etc/apache2/server.key:ro
+    - ./registry/certs/domain.crt:/etc/apache2/server.crt:ro
+    - ./registry/certs/domain.key:/etc/apache2/server.key:ro
+  ports:
+   - 8080:80
+   - 8443:443
+
+
+nginx:
+  restart: always
+  image: nginx:1.9.9
+  links:
+   - registry:registry
+   - registry-frontend:registry-frontend
+  volumes:
+    - ./registry/certs/domain.crt:/etc/nginx/ssl/domain.crt:ro
+    - ./registry/certs/domain.key:/etc/nginx/ssl/domain.key:ro
+    - ./registry/auth/htpasswd:/opt/nginx/conf/.htpasswd:ro
+    - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
   ports:
    - 80:80
    - 443:443
