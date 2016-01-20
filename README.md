@@ -22,7 +22,7 @@ docker push
 docker pull
 ```
 也可以访问前端查看镜像
-[https://docker-hub.hawei.com/home](https://docker-hub.hawei.com/home)
+[https://docker-hub.huawei.com/home](https://docker-hub.huawei.com/home)
 用户名user  密码1234
 
 
