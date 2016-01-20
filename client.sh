@@ -5,4 +5,4 @@ path=/etc/docker/certs.d/docker-hub.huawei.com
 
 sudo mkdir -p $path
 
-sudo cp -f certs/domain.crt /etc/docker/certs.d/docker-hub.huawei.com/ca.crt
+sudo cp -f $path/ca.crt
