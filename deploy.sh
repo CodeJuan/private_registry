@@ -30,6 +30,6 @@ docker run --entrypoint htpasswd registry:2.2.1 -Bbn user 1234 > auth/htpasswd
 
 # mkdir
 mkdir -p docker_registry
-
+mkdir -p mirror
 
 cd $curpath

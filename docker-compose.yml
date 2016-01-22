@@ -64,3 +64,15 @@ nginx:
   ports:
    - 80:80
    - 443:443
+
+mirror:
+  restart: always
+  image: registry:2.2.1
+  volumes:
+    - ./mirror:/var/lib/registry
+  environment:
+    STANDALONE: 'false'
+    MIRROR_SOURCE: https://registry-1.docker.io
+    MIRROR_SOURCE_INDEX: https://index.docker.io registry
+  ports:
+   - 5555:5000
