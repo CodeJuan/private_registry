@@ -33,3 +33,6 @@ docker pull
 # 架构
 ![](http://dockerone.com/uploads/article/20150512/1e111941614512fcc0bdeb2e80ee9384.png)
 来自钟成的文章[http://dockone.io/people/%E9%9A%BE%E6%98%93](http://dockone.io/people/%E9%9A%BE%E6%98%93)
+
+# mirror
+用的就是registry的mirror功能，在client daemon也设置了OPT --registry-mirror，mirror可以收到request，可第二次还是404，需要研究一下
