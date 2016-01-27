@@ -26,6 +26,7 @@ sudo cp certs/domain.crt /etc/docker/certs.d/docker-hub.huawei.com/ca.crt
 echo auth
 mkdir -p auth
 # 这里改成通过registry2.2，自己在脚本嵌入密码的方式，减少一次输入
+# 默认用户名密码是user 1234
 docker run --entrypoint htpasswd registry:2.2.1 -Bbn user 1234 > auth/htpasswd
 
 # mkdir
