@@ -58,6 +58,7 @@ nginx:
    - registry:registry
    - registry2:registry2
    - registry-frontend:registry-frontend
+   - mirror:mirror
   volumes:
     - ./registry/certs/domain.crt:/etc/nginx/ssl/domain.crt:ro
     - ./registry/certs/domain.key:/etc/nginx/ssl/domain.key:ro
@@ -72,9 +73,8 @@ mirror:
   image: registry:2.2.1
   volumes:
     - ./mirror:/var/lib/registry
+    - ./mirror_config.yml:/etc/docker/registry/config.yml
   environment:
     STANDALONE: 'false'
-    MIRROR_SOURCE: https://registry-1.docker.io
-    MIRROR_SOURCE_INDEX: https://index.docker.io registry
   ports:
    - 5555:5000
